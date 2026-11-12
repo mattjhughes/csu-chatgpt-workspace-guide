@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "CSU Workspace Overlay",
+  "version": "0.4.0",
+  "description": "CSU permission recommendations with inline pills and a collapsible guidance panel.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://admin.openai.com/*"
+      ],
+      "js": [
+        "baseline.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/csu-wordmark.png"
+      ],
+      "matches": [
+        "https://admin.openai.com/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "alarms"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://raw.githubusercontent.com/*"
+  ]
+}

@@ -1,0 +1,17 @@
+name: Validate extension and baseline
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check content.js
+      - run: node --check background.js
+      - run: node --check sync-core.js
+      - run: node --check baseline.js
+      - run: node --test tests/sync.test.cjs
