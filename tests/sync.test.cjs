@@ -72,3 +72,23 @@ test('messages accept the extension Admin Console context only',async () => {
   const result=await new Promise(resolve=>assert.equal(s.listeners.message(msg,{id:'test-extension',url:'https://admin.openai.com/workspace/x/permissions'},resolve),true));
   assert.equal(result.baseline.version,published.version);
 });
+test('rich guidance survives validation; unsafe links and malformed content are rejected',()=>{
+ const s=setup(),clean=s.api.validate(published);
+ const key='workspace-permission-library-workspace-link-sharing';
+ assert.equal(clean.recommendations[key].guidance.security,'Medium');
+ assert.equal(clean.recommendations[key].guidance.effort,'Low');
+ const malicious=structuredClone(published);malicious.recommendations[key].guidance.sources=[{title:'Bad',url:'javascript:alert(1)'}];
+ assert.throws(()=>s.api.validate(malicious));
+ const malformed=structuredClone(published);malformed.recommendations[key].guidance.callouts='bad';
+ assert.throws(()=>s.api.validate(malformed));
+});
+test('student audiences, pending Task insights and model score visibility are exported',()=>{
+ const r=published.recommendations;
+ assert.match(r['workspace-permission-data-export'].guidance.audience,/student/i);
+ assert.equal(r['general-2'].decision,'');
+ assert.equal(r['general-2'].guidance.reviewFlag,'CO leadership review');
+ assert.equal(r['model-8'].guidance.showScores,false);
+ assert.equal(r['general-15'].guidance.access,'Campus policy');
+ assert.equal(r['workspace-permission-orbitLocalComputer'].decision,'disable');
+ assert.equal(r['workspace-permission-matrix-work-thread-sync'].decision,'limited');
+});

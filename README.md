@@ -1,59 +1,34 @@
-# CSU ChatGPT Workspace Guide
+# CSU ChatGPT Workspace Guide — v0.6.0
 
-Chrome extension providing one shared recommendation baseline for CSU campuses. CSU pills appear beside information icons on the OpenAI Admin Console Permissions page. Click a pill to open its guidance in the collapsible panel; hover or focus it for the recommendation, category, and rationale.
+Read-only Chrome/Edge extension and reference site using the November 13 reviewed recommendations. The extension adds CSU pills beside matching settings on Workspace settings, Permissions, and Models. Hover or focus a pill for a summary; click for the same detailed guidance panel used by the site. Green = Enabled, red = Disabled, yellow = Limited Access, gray = pending/no CSU access recommendation. Parameter recommendations use their recorded values.
 
-- Green: Enabled
-- Red: Disabled
-- Yellow: Limited Access
-- Gray: no decision yet in the three-value access scheme
+## Install or update
 
-Categories are Baseline, Recommended, or Campus Decision. Pill colors show the CSU recommendation independently of the current workspace toggle. The extension does not change workspace settings.
+Extract `csu-workspace-overlay.zip`. In `chrome://extensions` (or `edge://extensions`), use Developer mode → Load unpacked and select the folder containing `manifest.json`. To update an existing unpacked installation, replace the files in its original folder, click Reload on its extension card, and refresh Admin Console. Code changes require this one-time update; subsequent recommendation-only releases synchronize from GitHub. This ZIP is not a Chrome Web Store release.
 
-## Install v0.5.0
+The extension does not change workspace settings and has no editing controls. No additional Chrome permissions were added in this release.
 
-Download this repository using **Code → Download ZIP** and extract it. Open `chrome://extensions`, enable **Developer mode**, and choose **Load unpacked**. Select the extracted folder containing `manifest.json`. Refresh your Admin Console tab.
+## One reviewed source
 
-To update an existing unpacked installation, replace its files, click **Reload** on the extension card, and refresh the Admin Console tab. This update adds access to raw.githubusercontent.com for downloading public guidance. No GitHub account or token is required for readers.
+`guide/recommendations.json` is the editable source for the site and extension. It preserves categories, concern, effort, audiences, reasoning, callouts, pending/provisional status, references, and model preferences. Run `python3 sync-guide.py` after editing it to regenerate `guide/data.js`, root `recommendations.json`, and `baseline.js`. Copy changed shared `guidance-ui.js`/`.css` to both root and `guide/` when changing the common component. Publish `guide/` through the separate Sites checkout after review.
 
-## Publish recommendation updates
+Root `recommendations.json` keeps schema version 1 and simple decisions for older installations, with a validated optional `guidance` object for v0.6. Stable permission IDs distinguish repeated labels. Unique display-label aliases support earlier releases. Generic guide IDs such as `general-1` are not treated as live Admin Console identifiers.
 
-Edit [recommendations.json](recommendations.json) on the `main` branch, update `version` and `publishedAt`, and commit. The file is the source distributed to all installations. The initial content is recovered historical guidance with the October 27 reviewed decisions; some categories and access decisions remain pending. Historical Testing, Managed Rollout, Students Only, and other values have not been silently converted to the new three-value scheme.
+The new review Site is separate from the original Site. It starts owner-private. Agent security is documentation-only. Task insights remains pending CO leadership review. Unassigned ratings and working Teams proposals are not silently finalized. No complete coverage of unselected tabs or tenant settings is claimed.
 
-Example entry:
+## GitHub synchronization
 
-```json
-"Search the web": {
-  "decision": "enable",
-  "category": "Baseline",
-  "rationale": "Support current information, source discovery, and web-grounded answers.",
-  "source": "CSU baseline review"
-}
-```
-
-`decision` accepts `enable`, `disable`, `limited`, or an empty string for pending review. `category` accepts `Baseline`, `Recommended`, `Campus Decision`, or an empty string. All entries require string `rationale` and `source` fields. Use `schemaVersion: 1`; `version` is a release label and `publishedAt` is an ISO timestamp.
-
-Entries can use stable Admin Console permission row IDs, e.g. `workspace-permission-web-search`. Display labels are supported for recovered guidance. Stable IDs take precedence and distinguish duplicate labels such as Allow local computer access. The extension checks the published ID first, then the published display label. Rename or remap entries if OpenAI changes a label or ID.
-
-## Sync behavior
-
-The service worker fetches only this public URL:
-
+The service worker reads only:
 https://raw.githubusercontent.com/mattjhughes/csu-chatgpt-workspace-guide/main/recommendations.json
 
-It checks on installation, browser startup, loading Admin Console, and opening the panel, using a 15-minute freshness window. An hourly Chrome alarm checks while the browser runs; sleeping devices can delay alarms. **Refresh from GitHub** bypasses the freshness window. GitHub caching can cause a short delay after a commit.
+Checks occur at installation, browser startup, page load/panel opening, and hourly while the browser runs, with a 15-minute freshness window. **Refresh from GitHub** bypasses that window. Failed, oversized, unsafe, or malformed downloads preserve the last valid cache; a new offline install uses bundled data. The content script rejects data older than its packaged baseline. No credentials, screenshots, or workspace content are uploaded. Only JSON data is downloaded; the extension does not execute remote code. All remote display text is escaped and reference links must use HTTPS.
 
-The panel shows the baseline version, publication date, and last successful check. Valid downloads replace the cached baseline, including removed entries. Failed downloads, malformed JSON, incompatible schemas, or files over 1 MiB preserve the last valid cache; a fresh offline install uses the packaged baseline. Open tabs receive updates through extension storage events. Only JSON data is downloaded; remote text is rendered with textContent, never executed or inserted as HTML.
+## Matching and limits
 
-## Read-only guidance
+Stable permission row IDs take precedence, then exact normalized labels within the current page. Repeated labels require an unambiguous section or stable ID. Unknown or ambiguous settings are left untouched rather than assigned a guessed recommendation. The current selectors support information buttons and exact leaf labels; Admin Console layout/label changes can require a matching update. Default-model labels match Model, Effort, Speed, and New chats only within an unambiguous Chat or Work & Codex product group. The Dots Settings tab was not captured or reviewed.
 
-Recommendations are maintained only in `recommendations.json` on GitHub. The extension has no recommendation editor or local overrides. Drafts saved by older versions are ignored; existing draft data is left untouched. The Refresh from GitHub control downloads published guidance without changing it.
+## Verification
 
-Hover cards show a CSU header, permission title, colored access and category pills, rationale, source, and a hint to open the sidebar. The same card appears on keyboard focus, stays available while the pointer is over it, and dismisses with Escape. Color is accompanied by text. The sidebar also displays status and category pills.
+Run `node --test tests/sync.test.cjs` for safe rich-data validation, offline/cache behavior, source checks and audience/pending exceptions. Browser fixture checks cover Permissions, Workspace settings, Models, repeated local-access labels, unknown settings, the shared detail panel, and preserving native controls. Fixtures do not prove an installed extension works against every current Admin Console layout; installation/live-page verification remains separate.
 
-## Development and checks
-
-No build or package dependencies are needed. After editing extension code, reload the extension and Admin Console tab. Recommendation-only changes in GitHub do not require an extension update. Code, schema, or permission changes may require one.
-
-Run `node --test tests/sync.test.cjs` for download validation, caching, offline and invalid-response fallback, replacement, and message-origin checks. Tests simulate Chrome APIs; live extension installation remains a separate check. The pill, styled tooltip, and sidebar flows were previewed on the actual Admin Console page. Version 0.5.0 was checked to contain no form fields or edit controls. The extension service worker has not yet been tested inside an installed Chrome extension.
-
-The packaged CSU wordmark was reused from the existing CSU Workspace Config Guide. The CSU name and wordmark remain their owner's property; no trademark license is granted by this repository.
+The CSU wordmark was reused from the existing guide. No trademark license is granted by this repository.

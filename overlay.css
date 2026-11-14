@@ -1,0 +1,3 @@
+/* Only the injected pills are styled in the host page. The panel uses Shadow DOM. */
+button.csu-setting-pill[data-csu-pill]{margin-inline-start:7px;position:relative;z-index:1}
+@media print{#csu-workspace-overlay,button.csu-setting-pill[data-csu-pill]{display:none!important}}

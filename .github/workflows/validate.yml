@@ -14,4 +14,7 @@ jobs:
       - run: node --check background.js
       - run: node --check sync-core.js
       - run: node --check baseline.js
+      - run: node --check guidance-ui.js
+      - run: node --check guide/app.js
+      - run: node --check guide/guidance-ui.js
       - run: node --test tests/sync.test.cjs

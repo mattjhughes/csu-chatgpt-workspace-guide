@@ -1,0 +1,38 @@
+'use strict';
+(()=>{
+ const data=window.CSU_GUIDE,$=id=>document.getElementById(id),esc=CSUGuidanceUI.escape;
+ const pageOrder=['workspace','permissions','models','agent-security'];let pageId='permissions';
+ const icon={workspace:'<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 5V3m8 2V3M8 10h8M8 14h5"/>',permissions:'<path d="m12 3 8 4v5c0 4-4 7-8 9-4-2-8-5-8-9V7Z"/><path d="m8 12 3 3 5-6"/>',models:'<path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>'};
+ const guidance=CSUGuidanceUI.mount({asset:'assets/csu-wordmark.png',onVisibility:open=>{document.body.classList.toggle('panel-open',open);$('guidance-toggle').setAttribute('aria-expanded',String(open));syncSelected()}});
+ function syncSelected(){document.querySelectorAll('.setting-row').forEach(n=>n.classList.toggle('is-selected',document.body.classList.contains('panel-open')&&n.id===guidance.selected?.id))}
+ function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+ function rowDescription(r){if(r.audience)return r.audience;if(r.label==='Composer Prediction in Codex')return 'Allow Codex to suggest the next prompt.';return ''}
+ function render(){
+  guidance.hideTip();const p=data.sections.find(s=>s.id===pageId),query=$('search').value.trim().toLowerCase(),access=$('access').value,category=$('category').value;
+  const rows=p.rows.filter(r=>(!query||[r.label,r.section,r.subsection,r.rationale,r.audience,...r.callouts.map(c=>c.title+' '+c.text)].join(' ').toLowerCase().includes(query))&&(!access||r.access===access)&&(!category||r.category===category));
+  $('page-title').textContent=p.title;document.title=p.title+' · CSU Admin guide';
+  $('page-nav').innerHTML=pageOrder.map(id=>{const x=data.sections.find(p=>p.id===id);return `<a href="#${id}" class="nav-link" ${id===pageId?'aria-current="page"':''}><svg viewBox="0 0 24 24" aria-hidden="true">${icon[id]||icon.permissions}</svg>${esc(x.title)}</a>`}).join('');
+  $('page-note').innerHTML=p.referenceOnly?'<span class="note-dot" aria-hidden="true"></span><p><strong>Campus-specific configuration.</strong> Reference documentation only; no CSU access recommendation or scores are assigned on this page.</p>':'<span class="note-dot" aria-hidden="true"></span><p><strong>CSU guidance, in Admin Console order.</strong> These are recommendations, not your workspace’s current settings. Hover a CSU pill for a summary; click for details.</p>';
+  document.body.classList.toggle('reference-page',!!p.referenceOnly);$('filters').hidden=!!p.referenceOnly;$('results-count').parentElement.hidden=!!p.referenceOnly;$('guidance-toggle').hidden=!!p.referenceOnly;
+  if(p.referenceOnly){
+   $('section-nav').innerHTML=p.referenceSections.map(s=>`<a class="section-link" href="#${pageId}/${s.id}">${esc(s.title)}</a>`).join('');
+   $('settings').innerHTML=p.referenceSections.map(s=>`<section class="setting-section reference-card" id="section-${pageId}-${s.id}"><header class="section-heading"><h2>${esc(s.title)}</h2></header><div class="reference-copy"><p>${esc(s.text)}</p>${s.links.map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.title)} <span aria-hidden="true">↗</span></a>`).join('')}</div></section>`).join('');
+   $('empty').hidden=true;return;
+  }
+  const sections=[...new Set(p.rows.map(r=>r.section))];const visible=sections.filter(s=>rows.some(r=>r.section===s));
+  $('section-nav').innerHTML=visible.map(s=>`<a class="section-link" href="#${pageId}/${slug(s)}">${esc(s)}</a>`).join('');
+  let html='';for(const section of visible){const group=rows.filter(r=>r.section===section);html+=`<section class="setting-section" id="section-${pageId}-${slug(section)}"><header class="section-heading"><h2>${esc(section)}</h2><small>${group.length} ${group.length===1?'setting':'settings'}</small></header>`;let sub='';for(const r of group){if(r.subsection&&r.subsection!==sub){sub=r.subsection;html+=`<h3 class="subheading">${esc(sub)}</h3>`}const description=rowDescription(r);const deprecated=r.callouts.some(c=>c.title.startsWith('Deprecated'));html+=`<article class="setting-row" id="${esc(r.id)}"><div class="setting-copy"><div class="setting-label-line"><span class="setting-label">${esc(r.label)}</span><span class="info-icon" aria-hidden="true">i</span><button class="csu-setting-pill" data-setting-id="${esc(r.id)}"></button></div>${description?`<p class="setting-description ${r.audience?'audience':''}">${esc(description)}</p>`:''}${deprecated?'<span class="inline-flag">Deprecated · migration planning</span>':''}${r.status.startsWith('Proposed')?'<span class="inline-flag">Working proposal</span>':''}${r.reviewFlag?`<span class="inline-flag">${esc(r.reviewFlag)}</span>`:''}</div><div class="recommendation-value"><strong class="${r.access==='Pending'?'pending-value':''}">${esc(r.access==='Pending'?'To decide':r.access)}</strong><small>CSU GUIDANCE</small></div></article>`}html+='</section>'}
+  $('settings').innerHTML=html;
+  const map=new Map(rows.map(r=>[r.id,r]));document.querySelectorAll('.csu-setting-pill').forEach(button=>guidance.bind(button,{...map.get(button.dataset.settingId),pageTitle:p.title}));syncSelected();
+  $('results-count').textContent=`${rows.length} of ${p.rows.length} settings${query||access||category?' · filtered':''}`;$('reset').hidden=!(query||access||category);$('empty').hidden=rows.length>0;
+ }
+ function reset(){['search','access','category'].forEach(id=>$(id).value='');render()}
+ function route(){const [id,target]=location.hash.slice(1).split('/');if(data.sections.some(p=>p.id===id)){if(pageId!==id){guidance.hide(false);pageId=id;reset();window.scrollTo(0,0)}else render();if(target)requestAnimationFrame(()=>document.getElementById(`section-${pageId}-${target}`)?.scrollIntoView())}else if(!location.hash)render()}
+ $('filters').addEventListener('submit',e=>e.preventDefault());$('search').addEventListener('input',render);['access','category'].forEach(id=>$(id).addEventListener('change',render));['reset','empty-reset'].forEach(id=>$(id).addEventListener('click',reset));$('guidance-toggle').setAttribute('aria-expanded','false');$('guidance-toggle').setAttribute('aria-controls','csu-guidance-panel');$('guidance-toggle').addEventListener('click',()=>document.body.classList.contains('panel-open')?guidance.hide():guidance.open(null,$('guidance-toggle')));
+ $('settings').addEventListener('click',syncSelected);
+ function key(show){$('guide-key').hidden=!show;$('key-toggle').setAttribute('aria-expanded',String(show));if(show)$('guide-key').scrollIntoView({block:'start'})}
+ $('key-toggle').addEventListener('click',()=>key($('guide-key').hidden));$('key-close').addEventListener('click',()=>{key(false);$('key-toggle').focus()});$('scope').textContent=data.scope;$('scope-notes').innerHTML=data.notes.map(n=>`<li>${esc(n)}</li>`).join('');
+ // Print the current filtered page with full reasoning and all callouts.
+ window.addEventListener('beforeprint',()=>{const all=new Map(data.sections.flatMap(p=>p.rows).map(r=>[r.id,r]));document.querySelectorAll('.setting-row').forEach(n=>{const r=all.get(n.id),d=document.createElement('div');d.className='print-guidance';d.hidden=true;d.innerHTML=`<strong>${esc(r.category)}</strong>${r.showScores===false?'':` · Concern: ${esc(r.security)} · Effort: ${esc(r.effort)}`}<br>${esc(r.rationale||'Reasoning pending.')}${r.callouts.map(c=>`<p><strong>${esc(c.title)}:</strong> ${esc(c.text)}</p>`).join('')}`;n.after(d)})});window.addEventListener('afterprint',()=>document.querySelectorAll('.print-guidance').forEach(n=>n.remove()));
+ window.addEventListener('hashchange',route);route();if(!$('settings').children.length)render();
+})();
