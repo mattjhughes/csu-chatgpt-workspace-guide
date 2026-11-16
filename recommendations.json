@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": "2026-11-13.1",
-  "publishedAt": "2026-11-14T00:51:39.192133Z",
+  "version": "2026-11-16.1",
+  "publishedAt": "2026-11-16T19:48:22.765496Z",
   "recommendations": {
     "composer-prediction-in-codex": {
       "decision": "enable",
@@ -2631,9 +2631,9 @@
       }
     },
     "model-2": {
-      "decision": "enable",
+      "decision": "disable",
       "category": "Campus Decision",
-      "rationale": "Make this model available to members. Focus on training users to choose the model and reasoning effort appropriate to the task.",
+      "rationale": "Recommend leaving 6 Astra disabled. Each campus can decide whether an exception is appropriate.",
       "source": "CSU review · Reviewed",
       "guidance": {
         "id": "model-2",
@@ -2641,23 +2641,12 @@
         "page": "models",
         "section": "Model availability",
         "subsection": "",
-        "access": "Enabled",
+        "access": "Disabled",
         "category": "Campus Decision",
         "security": "N/A",
         "effort": "N/A",
-        "rationale": "Make this model available to members. Focus on training users to choose the model and reasoning effort appropriate to the task.",
-        "callouts": [
-          {
-            "title": "Use only the reasoning effort needed",
-            "text": "Train users to start with the model and effort level sufficient for the task and increase effort when the work warrants it. Avoid higher reasoning effort merely because it is available.",
-            "tone": "info"
-          },
-          {
-            "title": "Optional campus limits",
-            "text": "Campuses can consider supported model or reasoning limits to manage usage. Prioritize user education and appropriate model selection rather than relying solely on restrictions.",
-            "tone": "info"
-          }
-        ],
+        "rationale": "Recommend leaving 6 Astra disabled. Each campus can decide whether an exception is appropriate.",
+        "callouts": [],
         "audience": "",
         "status": "Reviewed",
         "sources": [],
@@ -5692,9 +5681,9 @@
       }
     },
     "6 Astra": {
-      "decision": "enable",
+      "decision": "disable",
       "category": "Campus Decision",
-      "rationale": "Make this model available to members. Focus on training users to choose the model and reasoning effort appropriate to the task.",
+      "rationale": "Recommend leaving 6 Astra disabled. Each campus can decide whether an exception is appropriate.",
       "source": "CSU review · Reviewed",
       "guidance": {
         "id": "model-2",
@@ -5702,23 +5691,12 @@
         "page": "models",
         "section": "Model availability",
         "subsection": "",
-        "access": "Enabled",
+        "access": "Disabled",
         "category": "Campus Decision",
         "security": "N/A",
         "effort": "N/A",
-        "rationale": "Make this model available to members. Focus on training users to choose the model and reasoning effort appropriate to the task.",
-        "callouts": [
-          {
-            "title": "Use only the reasoning effort needed",
-            "text": "Train users to start with the model and effort level sufficient for the task and increase effort when the work warrants it. Avoid higher reasoning effort merely because it is available.",
-            "tone": "info"
-          },
-          {
-            "title": "Optional campus limits",
-            "text": "Campuses can consider supported model or reasoning limits to manage usage. Prioritize user education and appropriate model selection rather than relying solely on restrictions.",
-            "tone": "info"
-          }
-        ],
+        "rationale": "Recommend leaving 6 Astra disabled. Each campus can decide whether an exception is appropriate.",
+        "callouts": [],
         "audience": "",
         "status": "Reviewed",
         "sources": [],
