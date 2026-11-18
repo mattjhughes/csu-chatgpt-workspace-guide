@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": "2026-11-18.1",
-  "publishedAt": "2026-11-18T17:13:36.991743Z",
+  "version": "2026-11-18.2",
+  "publishedAt": "2026-11-18T18:20:15.076216Z",
   "recommendations": {
     "composer-prediction-in-codex": {
       "decision": "enable",
@@ -584,11 +584,6 @@
         "rationale": "Support meeting and lecture notes with appropriate notice, consent, and records guidance.",
         "callouts": [
           {
-            "title": "Recommendation under review",
-            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
-            "tone": "warning"
-          },
-          {
             "title": "Notice, consent, and records",
             "text": "Apply campus notice and consent practices and records guidance to recordings, notes, and transcripts.",
             "tone": "warning"
@@ -600,7 +595,7 @@
         "subsection": "",
         "page": "permissions",
         "reviewFlag": "Review requested",
-        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
+        "reviewNote": "Check whether this permission still appears in the current Admin Console before revising the recommendation.",
         "pageTitle": "Permissions"
       }
     },
@@ -636,8 +631,8 @@
     "workspace-permission-canvas-execution": {
       "decision": "enable",
       "category": "",
-      "rationale": "Support analysis, coding, teaching, and prototyping in a sandboxed environment.",
-      "source": "CSU review · Needs review",
+      "rationale": "Enable code execution for teaching, analysis, and prototyping. Keep Canvas internet access disabled.",
+      "source": "CSU review · Reviewed",
       "guidance": {
         "id": "workspace-permission-canvas-execution",
         "label": "Run code in Canvas and code blocks",
@@ -646,52 +641,38 @@
         "category": "Pending",
         "security": "Not assigned",
         "effort": "Not assigned",
-        "rationale": "Support analysis, coding, teaching, and prototyping in a sandboxed environment.",
-        "callouts": [
-          {
-            "title": "Recommendation under review",
-            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
-            "tone": "warning"
-          }
-        ],
+        "rationale": "Enable code execution for teaching, analysis, and prototyping. Keep Canvas internet access disabled.",
+        "callouts": [],
         "audience": "",
-        "status": "Needs review",
+        "status": "Reviewed",
         "sources": [],
         "subsection": "",
         "page": "permissions",
-        "reviewFlag": "Review requested",
-        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
         "pageTitle": "Permissions"
       }
     },
     "workspace-permission-canvas-network": {
-      "decision": "enable",
+      "decision": "disable",
       "category": "",
-      "rationale": "Allow code to retrieve packages, documentation, data, and approved external resources.",
-      "source": "CSU review · Needs review",
+      "rationale": "Disable internet access for Canvas and code blocks so code cannot fetch packages, data, or other resources from the internet.",
+      "source": "CSU review · Reviewed",
       "guidance": {
         "id": "workspace-permission-canvas-network",
         "label": "Allow internet access in Canvas and code blocks",
         "section": "Chat",
-        "access": "Enabled",
+        "access": "Disabled",
         "category": "Pending",
         "security": "Not assigned",
         "effort": "Not assigned",
-        "rationale": "Allow code to retrieve packages, documentation, data, and approved external resources.",
-        "callouts": [
-          {
-            "title": "Recommendation under review",
-            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
-            "tone": "warning"
-          }
-        ],
+        "rationale": "Disable internet access for Canvas and code blocks so code cannot fetch packages, data, or other resources from the internet.",
+        "callouts": [],
         "audience": "",
-        "status": "Needs review",
+        "status": "Reviewed",
         "sources": [],
         "subsection": "",
         "page": "permissions",
-        "reviewFlag": "Review requested",
-        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
+        "attention": "Updated",
+        "attentionNote": "Changed from Enabled to Disabled. Keep Canvas code execution available while blocking internet requests from it.",
         "pageTitle": "Permissions"
       }
     },
@@ -3680,11 +3661,6 @@
         "rationale": "Support meeting and lecture notes with appropriate notice, consent, and records guidance.",
         "callouts": [
           {
-            "title": "Recommendation under review",
-            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
-            "tone": "warning"
-          },
-          {
             "title": "Notice, consent, and records",
             "text": "Apply campus notice and consent practices and records guidance to recordings, notes, and transcripts.",
             "tone": "warning"
@@ -3696,7 +3672,7 @@
         "subsection": "",
         "page": "permissions",
         "reviewFlag": "Review requested",
-        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
+        "reviewNote": "Check whether this permission still appears in the current Admin Console before revising the recommendation.",
         "pageTitle": "Permissions"
       }
     },
@@ -3732,8 +3708,8 @@
     "Run code in Canvas and code blocks": {
       "decision": "enable",
       "category": "",
-      "rationale": "Support analysis, coding, teaching, and prototyping in a sandboxed environment.",
-      "source": "CSU review · Needs review",
+      "rationale": "Enable code execution for teaching, analysis, and prototyping. Keep Canvas internet access disabled.",
+      "source": "CSU review · Reviewed",
       "guidance": {
         "id": "workspace-permission-canvas-execution",
         "label": "Run code in Canvas and code blocks",
@@ -3742,52 +3718,38 @@
         "category": "Pending",
         "security": "Not assigned",
         "effort": "Not assigned",
-        "rationale": "Support analysis, coding, teaching, and prototyping in a sandboxed environment.",
-        "callouts": [
-          {
-            "title": "Recommendation under review",
-            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
-            "tone": "warning"
-          }
-        ],
+        "rationale": "Enable code execution for teaching, analysis, and prototyping. Keep Canvas internet access disabled.",
+        "callouts": [],
         "audience": "",
-        "status": "Needs review",
+        "status": "Reviewed",
         "sources": [],
         "subsection": "",
         "page": "permissions",
-        "reviewFlag": "Review requested",
-        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
         "pageTitle": "Permissions"
       }
     },
     "Allow internet access in Canvas and code blocks": {
-      "decision": "enable",
+      "decision": "disable",
       "category": "",
-      "rationale": "Allow code to retrieve packages, documentation, data, and approved external resources.",
-      "source": "CSU review · Needs review",
+      "rationale": "Disable internet access for Canvas and code blocks so code cannot fetch packages, data, or other resources from the internet.",
+      "source": "CSU review · Reviewed",
       "guidance": {
         "id": "workspace-permission-canvas-network",
         "label": "Allow internet access in Canvas and code blocks",
         "section": "Chat",
-        "access": "Enabled",
+        "access": "Disabled",
         "category": "Pending",
         "security": "Not assigned",
         "effort": "Not assigned",
-        "rationale": "Allow code to retrieve packages, documentation, data, and approved external resources.",
-        "callouts": [
-          {
-            "title": "Recommendation under review",
-            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
-            "tone": "warning"
-          }
-        ],
+        "rationale": "Disable internet access for Canvas and code blocks so code cannot fetch packages, data, or other resources from the internet.",
+        "callouts": [],
         "audience": "",
-        "status": "Needs review",
+        "status": "Reviewed",
         "sources": [],
         "subsection": "",
         "page": "permissions",
-        "reviewFlag": "Review requested",
-        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
+        "attention": "Updated",
+        "attentionNote": "Changed from Enabled to Disabled. Keep Canvas code execution available while blocking internet requests from it.",
         "pageTitle": "Permissions"
       }
     },
