@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": "2026-11-16.1",
-  "publishedAt": "2026-11-16T19:48:22.765496Z",
+  "version": "2026-11-18.1",
+  "publishedAt": "2026-11-18T17:13:36.991743Z",
   "recommendations": {
     "composer-prediction-in-codex": {
       "decision": "enable",
@@ -572,7 +572,7 @@
       "decision": "enable",
       "category": "Campus Decision",
       "rationale": "Support meeting and lecture notes with appropriate notice, consent, and records guidance.",
-      "source": "CSU review · Reviewed",
+      "source": "CSU review · Needs review",
       "guidance": {
         "id": "workspace-permission-record",
         "label": "Use ChatGPT Record",
@@ -584,16 +584,23 @@
         "rationale": "Support meeting and lecture notes with appropriate notice, consent, and records guidance.",
         "callouts": [
           {
+            "title": "Recommendation under review",
+            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
+            "tone": "warning"
+          },
+          {
             "title": "Notice, consent, and records",
             "text": "Apply campus notice and consent practices and records guidance to recordings, notes, and transcripts.",
             "tone": "warning"
           }
         ],
         "audience": "",
-        "status": "Reviewed",
+        "status": "Needs review",
         "sources": [],
         "subsection": "",
         "page": "permissions",
+        "reviewFlag": "Review requested",
+        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
         "pageTitle": "Permissions"
       }
     },
@@ -630,7 +637,7 @@
       "decision": "enable",
       "category": "",
       "rationale": "Support analysis, coding, teaching, and prototyping in a sandboxed environment.",
-      "source": "CSU review · Retained",
+      "source": "CSU review · Needs review",
       "guidance": {
         "id": "workspace-permission-canvas-execution",
         "label": "Run code in Canvas and code blocks",
@@ -640,12 +647,20 @@
         "security": "Not assigned",
         "effort": "Not assigned",
         "rationale": "Support analysis, coding, teaching, and prototyping in a sandboxed environment.",
-        "callouts": [],
+        "callouts": [
+          {
+            "title": "Recommendation under review",
+            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
+            "tone": "warning"
+          }
+        ],
         "audience": "",
-        "status": "Retained",
+        "status": "Needs review",
         "sources": [],
         "subsection": "",
         "page": "permissions",
+        "reviewFlag": "Review requested",
+        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
         "pageTitle": "Permissions"
       }
     },
@@ -653,7 +668,7 @@
       "decision": "enable",
       "category": "",
       "rationale": "Allow code to retrieve packages, documentation, data, and approved external resources.",
-      "source": "CSU review · Retained",
+      "source": "CSU review · Needs review",
       "guidance": {
         "id": "workspace-permission-canvas-network",
         "label": "Allow internet access in Canvas and code blocks",
@@ -663,12 +678,20 @@
         "security": "Not assigned",
         "effort": "Not assigned",
         "rationale": "Allow code to retrieve packages, documentation, data, and approved external resources.",
-        "callouts": [],
+        "callouts": [
+          {
+            "title": "Recommendation under review",
+            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
+            "tone": "warning"
+          }
+        ],
         "audience": "",
-        "status": "Retained",
+        "status": "Needs review",
         "sources": [],
         "subsection": "",
         "page": "permissions",
+        "reviewFlag": "Review requested",
+        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
         "pageTitle": "Permissions"
       }
     },
@@ -1290,19 +1313,19 @@
       }
     },
     "workspace-permission-matrix-upload-plugins": {
-      "decision": "limited",
+      "decision": "enable",
       "category": "",
-      "rationale": "Allow approved people to upload useful plugins, with review of externally sourced components.",
+      "rationale": "Allow members to upload useful plugins, with guidance for reviewing externally sourced components.",
       "source": "CSU review · Reviewed",
       "guidance": {
         "id": "workspace-permission-matrix-upload-plugins",
         "label": "Upload plugins",
         "section": "Features & capabilities",
-        "access": "Limited Access",
+        "access": "Enabled",
         "category": "Pending",
         "security": "Not assigned",
         "effort": "Not assigned",
-        "rationale": "Allow approved people to upload useful plugins, with review of externally sourced components.",
+        "rationale": "Allow members to upload useful plugins, with guidance for reviewing externally sourced components.",
         "callouts": [
           {
             "title": "Review before upload",
@@ -3645,7 +3668,7 @@
       "decision": "enable",
       "category": "Campus Decision",
       "rationale": "Support meeting and lecture notes with appropriate notice, consent, and records guidance.",
-      "source": "CSU review · Reviewed",
+      "source": "CSU review · Needs review",
       "guidance": {
         "id": "workspace-permission-record",
         "label": "Use ChatGPT Record",
@@ -3657,16 +3680,23 @@
         "rationale": "Support meeting and lecture notes with appropriate notice, consent, and records guidance.",
         "callouts": [
           {
+            "title": "Recommendation under review",
+            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
+            "tone": "warning"
+          },
+          {
             "title": "Notice, consent, and records",
             "text": "Apply campus notice and consent practices and records guidance to recordings, notes, and transcripts.",
             "tone": "warning"
           }
         ],
         "audience": "",
-        "status": "Reviewed",
+        "status": "Needs review",
         "sources": [],
         "subsection": "",
         "page": "permissions",
+        "reviewFlag": "Review requested",
+        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
         "pageTitle": "Permissions"
       }
     },
@@ -3703,7 +3733,7 @@
       "decision": "enable",
       "category": "",
       "rationale": "Support analysis, coding, teaching, and prototyping in a sandboxed environment.",
-      "source": "CSU review · Retained",
+      "source": "CSU review · Needs review",
       "guidance": {
         "id": "workspace-permission-canvas-execution",
         "label": "Run code in Canvas and code blocks",
@@ -3713,12 +3743,20 @@
         "security": "Not assigned",
         "effort": "Not assigned",
         "rationale": "Support analysis, coding, teaching, and prototyping in a sandboxed environment.",
-        "callouts": [],
+        "callouts": [
+          {
+            "title": "Recommendation under review",
+            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
+            "tone": "warning"
+          }
+        ],
         "audience": "",
-        "status": "Retained",
+        "status": "Needs review",
         "sources": [],
         "subsection": "",
         "page": "permissions",
+        "reviewFlag": "Review requested",
+        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
         "pageTitle": "Permissions"
       }
     },
@@ -3726,7 +3764,7 @@
       "decision": "enable",
       "category": "",
       "rationale": "Allow code to retrieve packages, documentation, data, and approved external resources.",
-      "source": "CSU review · Retained",
+      "source": "CSU review · Needs review",
       "guidance": {
         "id": "workspace-permission-canvas-network",
         "label": "Allow internet access in Canvas and code blocks",
@@ -3736,12 +3774,20 @@
         "security": "Not assigned",
         "effort": "Not assigned",
         "rationale": "Allow code to retrieve packages, documentation, data, and approved external resources.",
-        "callouts": [],
+        "callouts": [
+          {
+            "title": "Recommendation under review",
+            "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
+            "tone": "warning"
+          }
+        ],
         "audience": "",
-        "status": "Retained",
+        "status": "Needs review",
         "sources": [],
         "subsection": "",
         "page": "permissions",
+        "reviewFlag": "Review requested",
+        "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review.",
         "pageTitle": "Permissions"
       }
     },
@@ -4340,19 +4386,19 @@
       }
     },
     "Upload plugins": {
-      "decision": "limited",
+      "decision": "enable",
       "category": "",
-      "rationale": "Allow approved people to upload useful plugins, with review of externally sourced components.",
+      "rationale": "Allow members to upload useful plugins, with guidance for reviewing externally sourced components.",
       "source": "CSU review · Reviewed",
       "guidance": {
         "id": "workspace-permission-matrix-upload-plugins",
         "label": "Upload plugins",
         "section": "Features & capabilities",
-        "access": "Limited Access",
+        "access": "Enabled",
         "category": "Pending",
         "security": "Not assigned",
         "effort": "Not assigned",
-        "rationale": "Allow approved people to upload useful plugins, with review of externally sourced components.",
+        "rationale": "Allow members to upload useful plugins, with guidance for reviewing externally sourced components.",
         "callouts": [
           {
             "title": "Review before upload",

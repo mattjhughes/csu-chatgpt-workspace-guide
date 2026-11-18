@@ -1,7 +1,7 @@
 {
   "title": "CSU ChatGPT workspace recommendations",
-  "updated": "November 16, 2026",
-  "version": "2026-11-16.1",
+  "updated": "November 18, 2026",
+  "version": "2026-11-18.1",
   "sections": [
     {
       "id": "permissions",
@@ -430,16 +430,23 @@
           "rationale": "Support meeting and lecture notes with appropriate notice, consent, and records guidance.",
           "callouts": [
             {
+              "title": "Recommendation under review",
+              "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
+              "tone": "warning"
+            },
+            {
               "title": "Notice, consent, and records",
               "text": "Apply campus notice and consent practices and records guidance to recordings, notes, and transcripts.",
               "tone": "warning"
             }
           ],
           "audience": "",
-          "status": "Reviewed",
+          "status": "Needs review",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "reviewFlag": "Review requested",
+          "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review."
         },
         {
           "id": "workspace-permission-record-knowledge",
@@ -472,12 +479,20 @@
           "security": "Not assigned",
           "effort": "Not assigned",
           "rationale": "Support analysis, coding, teaching, and prototyping in a sandboxed environment.",
-          "callouts": [],
+          "callouts": [
+            {
+              "title": "Recommendation under review",
+              "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
+              "tone": "warning"
+            }
+          ],
           "audience": "",
-          "status": "Retained",
+          "status": "Needs review",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "reviewFlag": "Review requested",
+          "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review."
         },
         {
           "id": "workspace-permission-canvas-network",
@@ -488,12 +503,20 @@
           "security": "Not assigned",
           "effort": "Not assigned",
           "rationale": "Allow code to retrieve packages, documentation, data, and approved external resources.",
-          "callouts": [],
+          "callouts": [
+            {
+              "title": "Recommendation under review",
+              "text": "CSU has requested review of this setting. The current Enabled recommendation is retained until a new access decision is made.",
+              "tone": "warning"
+            }
+          ],
           "audience": "",
-          "status": "Retained",
+          "status": "Needs review",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "reviewFlag": "Review requested",
+          "reviewNote": "Review this recommendation with CSU. The current access recommendation remains in place pending that review."
         },
         {
           "id": "workspace-permission-sharing",
@@ -955,11 +978,11 @@
           "id": "workspace-permission-matrix-upload-plugins",
           "label": "Upload plugins",
           "section": "Features & capabilities",
-          "access": "Limited Access",
+          "access": "Enabled",
           "category": "Pending",
           "security": "Not assigned",
           "effort": "Not assigned",
-          "rationale": "Allow approved people to upload useful plugins, with review of externally sourced components.",
+          "rationale": "Allow members to upload useful plugins, with guidance for reviewing externally sourced components.",
           "callouts": [
             {
               "title": "Review before upload",
