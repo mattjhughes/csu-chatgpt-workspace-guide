@@ -1,7 +1,7 @@
 {
   "title": "CSU ChatGPT workspace recommendations",
   "updated": "November 18, 2026",
-  "version": "2026-11-18.2",
+  "version": "2026-11-19.1",
   "sections": [
     {
       "id": "permissions",
@@ -22,7 +22,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-orbit",
@@ -44,7 +46,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-orbitSlackTeams",
@@ -60,7 +64,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-orbitLocalComputer",
@@ -76,7 +82,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-orbitRules",
@@ -98,7 +106,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-web-search",
@@ -567,7 +577,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-matrix-work-parent",
@@ -637,7 +649,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-matrix-work-thread-sync",
@@ -653,7 +667,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-codex-local",
@@ -790,7 +806,9 @@
           "sources": [],
           "effortNote": "Additional administrative effort; level not assigned.",
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-codex-security",
@@ -931,7 +949,9 @@
             }
           ],
           "subsection": "Let agents use cloud computers",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-plugins",
@@ -975,7 +995,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "Plugins",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-matrix-upload-plugins-with-custom-mcp-servers",
@@ -991,7 +1013,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "Plugins",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-matrix-share-plugins",
@@ -1007,7 +1031,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "Plugins",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-matrix-publish-plugins",
@@ -1023,7 +1049,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "Plugins",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-mcp",
@@ -1167,7 +1195,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "Sites",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-sitesAttachTunnels",
@@ -1189,7 +1219,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "Sites",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-teamCreate",
@@ -1226,7 +1258,9 @@
           ],
           "reviewNote": "Enabled and Recommended were approved. Low concern / Low effort were proposed in discussion but not explicitly confirmed.",
           "subsection": "Teams and team tasks",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-teamAutomations",
@@ -1268,7 +1302,9 @@
           ],
           "reviewNote": "Campus Decision was approved. Limited Access and Medium scores remain the working proposal.",
           "subsection": "Teams and team tasks",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-voice",
@@ -1332,7 +1368,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "Memory, credentials, and directory",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-memory",
@@ -1440,7 +1478,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "workspace-permission-library-workspace-link-sharing",
@@ -1462,7 +1502,9 @@
           "status": "Reviewed",
           "sources": [],
           "subsection": "",
-          "page": "permissions"
+          "page": "permissions",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         }
       ]
     },
@@ -1531,7 +1573,9 @@
           "status": "Pending",
           "sources": [],
           "reviewFlag": "CO leadership review",
-          "reviewNote": "Review Enable task insights with the Chancellor’s Office (CO) leadership team before assigning a CSU recommendation."
+          "reviewNote": "Review Enable task insights with the Chancellor’s Office (CO) leadership team before assigning a CSU recommendation.",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition. CO leadership review."
         },
         {
           "id": "general-3",
@@ -1568,7 +1612,9 @@
               "title": "Managing impact surveys in Admin Console",
               "url": "https://help.openai.com/en/articles/20001149-managing-impact-surveys-in-admin-console"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-4",
@@ -1600,7 +1646,9 @@
               "title": "Managing impact surveys in Admin Console",
               "url": "https://help.openai.com/en/articles/20001149-managing-impact-surveys-in-admin-console"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-5",
@@ -1637,7 +1685,9 @@
               "title": "Connected apps in ChatGPT — Permission options",
               "url": "https://help.openai.com/en/articles/11487775-connected-apps-in-chatgpt#permission-options"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-6",
@@ -1664,7 +1714,9 @@
               "title": "Google app data controls FAQ — Suggested prompts",
               "url": "https://help.openai.com/en/articles/10408842-google-app-data-controls-faq"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-7",
@@ -1701,7 +1753,9 @@
               "title": "Teams in ChatGPT — Automatically convert groups to teams",
               "url": "https://help.openai.com/en/articles/20001541-teams-in-chatgpt#automatically-convert-groups-to-teams"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-8",
@@ -1739,7 +1793,9 @@
               "url": "https://learn.chatgpt.com/docs/enterprise/access-tokens#set-an-access-token-expiration-limit"
             }
           ],
-          "reviewNote": "The current official access-token guide describes Codex tokens for Business and Enterprise. Verify applicability to the setting exposed in this Edu workspace; a browser-session timeout is not established by that guide."
+          "reviewNote": "The current official access-token guide describes Codex tokens for Business and Enterprise. Verify applicability to the setting exposed in this Edu workspace; a browser-session timeout is not established by that guide.",
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-9",
@@ -1808,7 +1864,9 @@
               "title": "Setting up ChatGPT with Apple Intelligence",
               "url": "https://help.openai.com/en/articles/10269382-setting-up-chatgpt-with-apple-intelligence"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-11",
@@ -1840,7 +1898,9 @@
               "title": "Shareable profiles in ChatGPT",
               "url": "https://help.openai.com/en/articles/20001539-shareable-profiles-in-chatgpt"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-12",
@@ -1867,7 +1927,9 @@
               "title": "Shareable profiles in ChatGPT — Enterprise workspaces",
               "url": "https://help.openai.com/en/articles/20001539-shareable-profiles-in-chatgpt"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-13",
@@ -1894,7 +1956,9 @@
               "title": "Shareable profiles in ChatGPT — Understand your profile activity",
               "url": "https://help.openai.com/en/articles/20001539-shareable-profiles-in-chatgpt"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-14",
@@ -1921,7 +1985,9 @@
               "title": "How your data is used to improve model performance — Feedback in managed workspaces",
               "url": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance"
             }
-          ]
+          ],
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "general-15",
@@ -1944,7 +2010,9 @@
           "audience": "",
           "status": "No CSU recommendation",
           "sources": [],
-          "showScores": false
+          "showScores": false,
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         }
       ]
     },
@@ -1979,7 +2047,9 @@
           "audience": "",
           "status": "Reviewed",
           "sources": [],
-          "showScores": false
+          "showScores": false,
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "model-1",
@@ -2007,7 +2077,9 @@
           "audience": "",
           "status": "Reviewed",
           "sources": [],
-          "showScores": false
+          "showScores": false,
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "model-2",
@@ -2024,7 +2096,9 @@
           "audience": "",
           "status": "Reviewed",
           "sources": [],
-          "showScores": false
+          "showScores": false,
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "model-3",
@@ -2052,7 +2126,9 @@
           "audience": "",
           "status": "Reviewed",
           "sources": [],
-          "showScores": false
+          "showScores": false,
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "model-4",
@@ -2080,7 +2156,9 @@
           "audience": "",
           "status": "Reviewed",
           "sources": [],
-          "showScores": false
+          "showScores": false,
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "model-5",
@@ -2136,7 +2214,9 @@
           "audience": "",
           "status": "Reviewed",
           "sources": [],
-          "showScores": false
+          "showScores": false,
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "model-7",
@@ -2187,7 +2267,9 @@
           "audience": "Trusted security teams only",
           "status": "Reviewed",
           "sources": [],
-          "showScores": false
+          "showScores": false,
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "model-default-0",
@@ -2323,7 +2405,9 @@
           "audience": "",
           "status": "Reviewed",
           "sources": [],
-          "showScores": false
+          "showScores": false,
+          "attention": "New",
+          "attentionNote": "New to the CSU guide since the September 2026 edition."
         },
         {
           "id": "model-default-8",
