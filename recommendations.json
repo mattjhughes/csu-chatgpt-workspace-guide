@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": "2026-11-19.1",
-  "publishedAt": "2026-11-19T20:25:46.879463Z",
+  "version": "2026-11-19.2",
+  "publishedAt": "2026-11-19T22:51:09.651583Z",
   "recommendations": {
     "composer-prediction-in-codex": {
       "decision": "enable",
@@ -1063,6 +1063,26 @@
             "title": "Cloud alternative to desktop",
             "text": "Highlight the improved cloud experience. It avoids direct local-device access, while repository permissions, credentials, and connected resources still require review.",
             "tone": "info"
+          },
+          {
+            "title": "1. Confirm who can use Codex Cloud",
+            "text": "In this permissions page, check Use Codex in the cloud for the intended users. If the campus will publish a shared environment, grant Manage workspace environments to designated maintainers.",
+            "tone": "info"
+          },
+          {
+            "title": "2. Build from the CSU baseline template",
+            "text": "Open the template above and put its files in an approved campus repository. In ChatGPT, go to Settings → Codex Cloud → Environments → Create environment. Select the repository and run bash ./setup.sh in the setup chat. Keep the command in Install script.",
+            "tone": "info"
+          },
+          {
+            "title": "3. Set network access",
+            "text": "Allow only the destinations the workflow needs. The campus setup guide lists the baseline’s Python and Node.js package hosts. Check that applicable Agent Security rules permit the traffic you intend to allow.",
+            "tone": "info"
+          },
+          {
+            "title": "4. Publish and verify",
+            "text": "Publish privately and run the smoke test in a fresh task. When workspace sharing is available and the campus is ready, select the workspace under Who can use and repeat the test with an ordinary member.",
+            "tone": "info"
           }
         ],
         "audience": "All students; approved faculty/staff rollout",
@@ -1070,6 +1090,16 @@
         "sources": [],
         "subsection": "",
         "page": "permissions",
+        "resources": [
+          {
+            "title": "Open the campus setup guide",
+            "url": "https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/codex-cloud-setup.html"
+          },
+          {
+            "title": "Get the CSU baseline environment template",
+            "url": "https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/codex-cloud-setup.html#csu-baseline"
+          }
+        ],
         "pageTitle": "Permissions"
       }
     },
@@ -1087,7 +1117,13 @@
         "security": "Not assigned",
         "effort": "Not assigned",
         "rationale": "Leave disabled unless the campus is prepared to handle the additional setup and administrative support.",
-        "callouts": [],
+        "callouts": [
+          {
+            "title": "Assign a campus maintainer",
+            "text": "Use this permission for the people who will prepare and publish shared campus environments. Open the setup guide for the permissions, template, network, and verification steps.",
+            "tone": "info"
+          }
+        ],
         "audience": "",
         "status": "Reviewed",
         "sources": [],
@@ -1096,6 +1132,16 @@
         "page": "permissions",
         "attention": "New",
         "attentionNote": "New to the CSU guide since the September 2026 edition.",
+        "resources": [
+          {
+            "title": "Open the campus setup guide",
+            "url": "https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/codex-cloud-setup.html"
+          },
+          {
+            "title": "Get the CSU baseline environment template",
+            "url": "https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/codex-cloud-setup.html#csu-baseline"
+          }
+        ],
         "pageTitle": "Permissions"
       }
     },
@@ -4197,6 +4243,26 @@
             "title": "Cloud alternative to desktop",
             "text": "Highlight the improved cloud experience. It avoids direct local-device access, while repository permissions, credentials, and connected resources still require review.",
             "tone": "info"
+          },
+          {
+            "title": "1. Confirm who can use Codex Cloud",
+            "text": "In this permissions page, check Use Codex in the cloud for the intended users. If the campus will publish a shared environment, grant Manage workspace environments to designated maintainers.",
+            "tone": "info"
+          },
+          {
+            "title": "2. Build from the CSU baseline template",
+            "text": "Open the template above and put its files in an approved campus repository. In ChatGPT, go to Settings → Codex Cloud → Environments → Create environment. Select the repository and run bash ./setup.sh in the setup chat. Keep the command in Install script.",
+            "tone": "info"
+          },
+          {
+            "title": "3. Set network access",
+            "text": "Allow only the destinations the workflow needs. The campus setup guide lists the baseline’s Python and Node.js package hosts. Check that applicable Agent Security rules permit the traffic you intend to allow.",
+            "tone": "info"
+          },
+          {
+            "title": "4. Publish and verify",
+            "text": "Publish privately and run the smoke test in a fresh task. When workspace sharing is available and the campus is ready, select the workspace under Who can use and repeat the test with an ordinary member.",
+            "tone": "info"
           }
         ],
         "audience": "All students; approved faculty/staff rollout",
@@ -4204,6 +4270,16 @@
         "sources": [],
         "subsection": "",
         "page": "permissions",
+        "resources": [
+          {
+            "title": "Open the campus setup guide",
+            "url": "https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/codex-cloud-setup.html"
+          },
+          {
+            "title": "Get the CSU baseline environment template",
+            "url": "https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/codex-cloud-setup.html#csu-baseline"
+          }
+        ],
         "pageTitle": "Permissions"
       }
     },
@@ -4221,7 +4297,13 @@
         "security": "Not assigned",
         "effort": "Not assigned",
         "rationale": "Leave disabled unless the campus is prepared to handle the additional setup and administrative support.",
-        "callouts": [],
+        "callouts": [
+          {
+            "title": "Assign a campus maintainer",
+            "text": "Use this permission for the people who will prepare and publish shared campus environments. Open the setup guide for the permissions, template, network, and verification steps.",
+            "tone": "info"
+          }
+        ],
         "audience": "",
         "status": "Reviewed",
         "sources": [],
@@ -4230,6 +4312,16 @@
         "page": "permissions",
         "attention": "New",
         "attentionNote": "New to the CSU guide since the September 2026 edition.",
+        "resources": [
+          {
+            "title": "Open the campus setup guide",
+            "url": "https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/codex-cloud-setup.html"
+          },
+          {
+            "title": "Get the CSU baseline environment template",
+            "url": "https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/codex-cloud-setup.html#csu-baseline"
+          }
+        ],
         "pageTitle": "Permissions"
       }
     },

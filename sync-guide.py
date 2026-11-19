@@ -1,6 +1,9 @@
 """Export the reviewed guide to the centrally synced extension baseline."""
 import json
 from pathlib import Path
+from urllib.parse import urljoin
+
+GUIDE_URL = 'https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/'
 root=Path(__file__).resolve().parent/'guide'
 ext=Path(__file__).resolve().parent
 d=json.loads((root/'recommendations.json').read_text())
@@ -16,7 +19,10 @@ for s in d['sections']:
   cat='' if r['category']=='Pending' else r['category']
   detail=json.loads(json.dumps(r));detail['pageTitle']=s['title']
   if 'resources' in detail:
-   detail['resources']=[{**x,'url':'https://csu-workspace-recommendations-review.calstateuniversity.chatgpt.site/'+x['url']} for x in detail['resources']]
+   detail['resources'] = [
+    {**resource, 'url': urljoin(GUIDE_URL, resource['url'])}
+    for resource in detail['resources']
+   ]
   out['recommendations'][r['id']]={'decision':decision,'category':cat,'rationale':r['rationale'],'source':'CSU review · '+r['status'],'guidance':detail}
 # Label aliases only when globally unique. Duplicate labels always use stable IDs.
 from collections import Counter
